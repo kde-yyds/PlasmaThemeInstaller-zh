@@ -4,11 +4,60 @@ int number_of_packages;
 using namespace std;
 void init()
 {
-    system("rm -rf ~/.tmp/plasmathemeinstaller-zh");
-    system("mkdir ~/.tmp/plasmathemeinstaller-zh");
-    system("clear");
+    system("rm -rf /tmp/plasmathemeinstaller-zh");
+    system("mkdir /tmp/plasmathemeinstaller-zh -p");
+//    system("clear");
 }
 void downloadlist()
 {
-    system("cd ~/.tmp/plasmathemeinstaller-zh&&git clone https://github.com/kde-yyds/PlasmaThemeInstaller-zh 1>/dev/null 2>/dev/null");
+    system("cd /tmp/plasmathemeinstaller-zh&&git clone https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh 1>/dev/null 2>/dev/null");
+}
+void displaydesktopthemes()
+{
+    ifstream list ("/tmp/plasmathemeinstaller-zh/PlasmaThemeInstaller-zh/lists/desktoptheme");
+    char a='a';
+    int i=0;
+    while(1)
+    {
+        i++;
+        list>>a;
+        if(list.eof()) break;
+        
+        while(a!='\''&&!list.eof()) 
+        {
+            list>>a;
+        }
+        if(list.eof()) break;
+        cout<<endl<<i<<" . ";
+        list>>a;
+        for(int j=1;j<=4;j++)
+        {
+            while(a!='\''&&!list.eof())
+            { 
+                cout<<a;
+                list>>a;
+           
+            }
+            list>>a;
+            cout<<"\n";
+            while(a!='\''&&!list.eof()) 
+            {
+                list>>a;
+            }
+            list>>a;
+        }
+
+
+       if(list.eof()) break;
+    }
+
+        
+ 
+    }
+
+int main()
+{
+    init();
+    downloadlist();
+    displaydesktopthemes();
 }
