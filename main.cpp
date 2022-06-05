@@ -31,14 +31,14 @@ void displaydesktopthemes()
             list>>a;
             while(a!='\'')
             { 
-                cout<<a;
+                if(j==1||j==2)cout<<a;
                 list>>a;       
             }list>>a;   
             while(a!='\'') 
             {
                 list>>a;
             }
-            cout<<"\n";
+            if(j==1||j==2)cout<<"\n";
         }
     }
 
