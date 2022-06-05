@@ -19,36 +19,27 @@ void displaydesktopthemes()
     int i=0;
     while(1)
     {
-        i++;
-        list>>a;
-        if(list.eof()) break;
-        
-        while(a!='\''&&!list.eof()) 
+        while(a!='\'') 
         {
             list>>a;
         }
+        i++;
         if(list.eof()) break;
         cout<<endl<<i<<" . ";
-        list>>a;
         for(int j=1;j<=4;j++)
         {
-            while(a!='\''&&!list.eof())
+            list>>a;
+            while(a!='\'')
             { 
                 cout<<a;
-                list>>a;
-           
-            }
-            list>>a;
-            cout<<"\n";
-            while(a!='\''&&!list.eof()) 
+                list>>a;       
+            }list>>a;   
+            while(a!='\'') 
             {
                 list>>a;
             }
-            list>>a;
+            cout<<"\n";
         }
-
-
-       if(list.eof()) break;
     }
 
         
@@ -57,7 +48,7 @@ void displaydesktopthemes()
 
 int main()
 {
-    init();
-    downloadlist();
+//    init();
+//    downloadlist();
     displaydesktopthemes();
 }
