@@ -16,5 +16,5 @@ chmod +x install.sh
 ./build.sh
 
 
-sudo ./install.sh`
+sudo ./install.sh
 
