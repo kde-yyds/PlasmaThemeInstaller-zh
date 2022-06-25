@@ -1,3 +1,6 @@
+/*
+此程序是自由软件；您可以以自由软件基金会发布的 GNU通用公共许可协议第三版或(您可以选择)更高版方式重新发布它和/或修改它。\n\n此程序是希望其会有用而发布，但没有任何担保；没有甚至是暗含的适宜销售或特定目的适用性方面的担保。详情参看GNU 通用公共许可协议。
+*/
 #include <iostream>
 #include <fstream>
 int number_of_packages;
@@ -333,14 +336,14 @@ void remove_an_aurorae(int n)
 }
 int main()
 {
-    system("clear");
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
     cout<<"正在获取主题列表……\n";
     init();
     download_list();
     cout<<"OK\n\n";
     while(1)
     {
-        system("clear");
+        cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
         cout<<"欢迎使用PlasmaThemeInstaller-zh\n\n";
         cout<<"[1] 安装或删除Plasma视觉风格\n";
         cout<<"[2] 安装或删除Kwin窗口装饰元素\n";
@@ -351,11 +354,11 @@ int main()
         cin>>t;
         if(t==1) 
         {
-            system("clear");
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
             show_desktop_themes();
             cout<<"\n  :";
             cin>>n;
-            system("clear");
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
             show_a_desktoptheme(n);
             cout<<"\n\n[1]安装\n[2]删除\n  :";
             cin>>m;
@@ -375,11 +378,11 @@ int main()
         }
         if(t==2)
         {
-            system("clear");
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
             show_auroraes();
             cout<<"\n  :";
             cin>>n;
-            system("clear");
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
             show_an_aurorae(n);
             cout<<"\n\n[1]安装\n[2]删除\n  :";
             cin>>m;
@@ -402,7 +405,6 @@ int main()
         {
             char c[]="此程序是自由软件；您可以以自由软件基金会发布的 GNU通用公共许可协议第三版或(您可以选择)更高版方式重新发布它和/或修改它。\n\n此程序是希望其会有用而发布，但没有任何担保；没有甚至是暗含的适宜销售或特定目的适用性方面的担保。详情参看GNU 通用公共许可协议。\n\n您应该与此程序一道收到了一份 GUN 通用公共许可协议的副本；如果没有，致信给the Free Software Foundation,Inc., 59 Temple Place - Suite330, Boston,MA 02111-1307,USA.";
             cout<<c;
-            return 0;
         }
         if(t==4)
         {
