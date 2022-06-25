@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 int number_of_packages;
+char verson[]="1.0-20220625";
 using namespace std;
 void init()
 {
@@ -344,7 +345,8 @@ int main()
     while(1)
     {
         cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
-        cout<<"欢迎使用PlasmaThemeInstaller-zh\n\n";
+        cout<<"欢迎使用PlasmaThemeInstaller-zh";
+        cout<<"    版本："<<verson<<"\n\n";
         cout<<"[1] 安装或删除Plasma视觉风格\n";
         cout<<"[2] 安装或删除Kwin窗口装饰元素\n";
         cout<<"[3] 关于PlasmaThemeInstaller-zh\n";
