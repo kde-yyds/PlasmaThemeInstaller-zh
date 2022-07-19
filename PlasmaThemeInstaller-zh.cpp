@@ -495,18 +495,19 @@ void remove_a_kwin_effect(int n)
 }
 int main()
 {
-    cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout<<"\n\n\n";
     cout<<"正在获取主题列表……\n";
     init();
     download_list();
     cout<<"OK\n\n";
     while(1)
     {
-        cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        cout<<"\n\n\n";
         cout<<"欢迎使用PlasmaThemeInstaller-zh";
         cout<<"    版本："<<verson<<"\n\n";
         cout<<"[1] 安装或删除Plasma视觉风格\n";
         cout<<"[2] 安装或删除Kwin窗口装饰元素\n";
+        cout<<"[3] 安装或删除Kwin特效\n";
         cout<<"[4] 关于PlasmaThemeInstaller-zh\n";
         cout<<"[5] 退出\n\n";
         cout<<" :";
@@ -514,11 +515,11 @@ int main()
         cin>>t;
         if(t==1) 
         {
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_desktop_themes();
             cout<<"\n  :";
             cin>>n;
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_a_desktoptheme(n);
             cout<<"\n\n[1]安装\n[2]删除\n  :";
             cin>>m;
@@ -538,11 +539,11 @@ int main()
         }
         if(t==2)
         {
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_auroraes();
             cout<<"\n  :";
             cin>>n;
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_an_aurorae(n);
             cout<<"\n\n[1]安装\n[2]删除\n  :";
             cin>>m;
@@ -563,11 +564,11 @@ int main()
         }
         if(t==3)
         {
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_kwin_effects();
             cout<<"\n  :";
             cin>>n;
-            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            cout<<"\n\n\n";
             show_a_kwin_effect(n);
             cout<<"\n\n[1]安装\n[2]删除\n  :";
             cin>>m;
