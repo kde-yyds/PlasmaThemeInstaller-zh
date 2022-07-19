@@ -1,15 +1,33 @@
 1
 'DeepinV20-dark'
 '透明度很高、有圆角的主题'
-'https://ghproxy.com/github.com/VMware16/PlasmaThemeInstaller-zh-file-repo/releases/download/themes/desktoptheme-DeepinV20-dark.tar.xz'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-DeepinV20-dark.tar.xz'
 '~/.local/share/plasma/desktoptheme/DeepinV20-dark/'
 2
 'Nova-Color'
 '透明度不高、有大圆角的主题'
-'https://ghproxy.com/github.com/VMware16/PlasmaThemeInstaller-zh-file-repo/releases/download/themes/desktoptheme-Nova-Color.tar.xz'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-Nova-Color.tar.xz'
 '~/.local/share/plasma/desktoptheme/Nova-Color/'
 3
 'Se7enAeroStyle'
 '类似win7的深色主题'
-'https://ghproxy.com/github.com/VMware16/PlasmaThemeInstaller-zh-file-repo/releases/download/themes/desktoptheme-Se7enAeroStyle.tar.xz'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-Se7enAeroStyle.tar.xz'
 '~/.local/share/plasma/desktoptheme/Se7enAeroStyle/'
+
+4
+'Breeze Blurred'
+'把透明度调高了的breeze微风主题'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-breeze-blurred.tar.xz'
+'~/.local/share/plasma/desktoptheme/breeze_transparent/'
+
+5
+'Win11OS dark'
+'仿win11深色主题'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-win11os-dark.tar.xz'
+'~/.local/share/plasma/desktoptheme/Win11OS-dark/'
+
+6
+'Win11OS light'
+'仿win11浅色主题'
+'https://ghproxy.com/github.com/kde-yyds/PlasmaThemeInstaller-zh-file-repo/releases/download/files/desktoptheme-win11os-light.tar.xz'
+'~/.local/share/plasma/desktoptheme/Win11OS-light/'
