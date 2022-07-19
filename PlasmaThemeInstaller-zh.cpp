@@ -335,6 +335,164 @@ void remove_an_aurorae(int n)
     system(remove);
     list.close();
 }
+void show_kwin_effects()
+{
+    cout<<"\nKwin特效：";
+    ifstream list ("/tmp/plasmathemeinstaller-zh/PlasmaThemeInstaller-zh/lists/kwineffects");
+    char a='a';
+    int i=0;
+    while(1)
+    {
+        while(a!='\'')
+        {
+            list>>a;
+        }
+        i++;
+        if(list.eof()) break;
+        cout<<endl<<"["<<i<<"] . ";
+        for(int j=1;j<=4;j++)
+        {
+            list>>a;
+            while(a!='\'')
+            {
+                if(j==1||j==2)cout<<a;
+                list>>a;
+            }list>>a;
+            while(a!='\'')
+            {
+                list>>a;
+            }
+            if(j==1||j==2)cout<<"\n";
+        }
+    }
+
+}
+void show_a_kwin_effect(int n)
+{
+    ifstream list ("/tmp/plasmathemeinstaller-zh/PlasmaThemeInstaller-zh/lists/kwineffects");
+    char a='a';
+    for(int i=1;i<=n;i++)
+    {
+        while(a!='\'')
+        {
+            list>>a;
+        }
+        if(list.eof()) break;
+        if(i==n) cout<<endl<<"["<<n<<"] . ";
+        for(int j=1;j<=4;j++)
+        {
+            list>>a;
+            while(a!='\'')
+            {
+                if((j==1||j==2)&&i==n)cout<<a;
+                list>>a;
+            }list>>a;
+            while(a!='\'')
+            {
+                list>>a;
+            }
+            if(j==1||j==2)cout<<"\n";
+        }
+    }
+    list.close();
+}
+void download_a_kwin_effect(int n)
+{
+    ifstream list ("/tmp/plasmathemeinstaller-zh/PlasmaThemeInstaller-zh/lists/kwineffects");
+    char a='a';
+    for(int i=1;i<n;i++)
+    {
+        while(a!='\'')
+        {
+            list>>a;
+        }
+        if(list.eof()) break;
+        for(int j=1;j<=4;j++)
+        {
+            list>>a;
+            while(a!='\'') list>>a;
+            list>>a;
+            while(a!='\'') list>>a;
+        }
+    }
+    for(int i=1;i<=2;i++)
+    {
+        list>>a;
+        while(a!='\'') list>>a;
+        list>>a;
+        while(a!='\'') list>>a;
+    }
+    char download[1000],t[49]="wget -O /tmp/plasmathemeinstaller-zh/tmp.tar.xz";
+    for(int i=0;i<1000;i++) download[i]=' ';
+    for(int i=0;i<=46;i++) download[i]=t[i];
+    int i=48;
+    if(n==1)
+    {
+        while(a!='\'') list>>a;
+        list>>a;
+    }
+    list>>a;
+    while(a!='\'')
+    {
+        download[i]=a;
+        list>>a;
+        i++;
+    }
+    char c[]=" 2>/dev/null";
+    int d=i;
+    for(int i=0;i<=12;i++) download[i+d]=c[i];
+    cout<<"Executing : "<<download<<endl;
+    system(download);
+    list.close();
+
+}
+void remove_a_kwin_effect(int n)
+{
+    ifstream list ("/tmp/plasmathemeinstaller-zh/PlasmaThemeInstaller-zh/lists/kwineffects");
+    char a='a';
+    for(int i=1;i<n;i++)
+    {
+        while(a!='\'')
+        {
+            list>>a;
+        }
+        if(list.eof()) break;
+        for(int j=1;j<=4;j++)
+        {
+            list>>a;
+            while(a!='\'') list>>a;
+            list>>a;
+            while(a!='\'') list>>a;
+        }
+    }
+    for(int i=1;i<=3;i++)
+    {
+        list>>a;
+        while(a!='\'') list>>a;
+        list>>a;
+        while(a!='\'') list>>a;
+    }
+    char remove[1000],t[8]="rm -rf ";
+    for(int i=0;i<1000;i++) remove[i]=' ';
+    for(int i=0;i<=6;i++) remove[i]=t[i];
+    int i=7;
+    if(n==1)
+    {
+        while(a!='\'') list>>a;
+        list>>a;
+    }
+    list>>a;
+    while(a!='\'')
+    {
+        remove[i]=a;
+        list>>a;
+        i++;
+    }
+    remove[i]='\0';
+    cout<<"Executing : "<<remove<<endl;
+    system(remove);
+    list.close();
+}
 int main()
 {
     cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -349,8 +507,8 @@ int main()
         cout<<"    版本："<<verson<<"\n\n";
         cout<<"[1] 安装或删除Plasma视觉风格\n";
         cout<<"[2] 安装或删除Kwin窗口装饰元素\n";
-        cout<<"[3] 关于PlasmaThemeInstaller-zh\n";
-        cout<<"[4] 退出\n\n";
+        cout<<"[4] 关于PlasmaThemeInstaller-zh\n";
+        cout<<"[5] 退出\n\n";
         cout<<" :";
         int t,n,m;
         cin>>t;
@@ -405,10 +563,34 @@ int main()
         }
         if(t==3)
         {
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            show_kwin_effects();
+            cout<<"\n  :";
+            cin>>n;
+            cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n";
+            show_a_kwin_effect(n);
+            cout<<"\n\n[1]安装\n[2]删除\n  :";
+            cin>>m;
+            if(m==1)
+            {
+                download_a_kwin_effect(n);
+                install();
+                cout<<"安装完成\n\n\n\n";
+                system("sleep 1");
+            }
+            if(m==2)
+            {
+                remove_a_kwin_effect(n);
+                cout<<"删除完成\n\n\n\n";
+                system("sleep 1");
+            }
+        }
+        if(t==4)
+        {
             char c[]="此程序是自由软件；您可以以自由软件基金会发布的 GNU通用公共许可协议第三版或(您可以选择)更高版方式重新发布它和/或修改它。\n\n此程序是希望其会有用而发布，但没有任何担保；没有甚至是暗含的适宜销售或特定目的适用性方面的担保。详情参看GNU 通用公共许可协议。\n\n您应该与此程序一道收到了一份 GUN 通用公共许可协议的副本；如果没有，致信给the Free Software Foundation,Inc., 59 Temple Place - Suite330, Boston,MA 02111-1307,USA.";
             cout<<c;
         }
-        if(t==4)
+        if(t==5)
         {
             return 0;
         }
