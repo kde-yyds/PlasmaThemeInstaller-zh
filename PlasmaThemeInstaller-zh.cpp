@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 int number_of_packages;
-char verson[]="1.0-20220625";
+char verson[]="2.0";
 using namespace std;
 void init()
 {
